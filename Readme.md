@@ -25,18 +25,18 @@ Explícalo en 2 o 3 líneas, con tus palabras (Hito 3).
 Una entrada al final de cada sesión: fecha, qué has hecho y qué te ha costado o qué has preguntado.
 
 - 01/11/2026 · Hecho: update del hito1
-  Me ha costado: Enlazar el GitHub con el VSC  
-  He preguntado: Como enlazarlo
+  Me ha costado: Crear las funciones porque no conocia algunos como: localCompare, sort, some, etc. Tambien las pruebas ha sido algo nuevo para mi asi que complicado   
+  He preguntado: Para que sirven algunas funciones
 
 ## Uso de IA
 
 Si no la has usado, escribe «No he usado IA».
 
 - Herramienta: DeepSeek
-- Para qué la usé (explicar, depurar, generar código): Para que me guie para poder enlazar el GitHub con el VSC y poder subirlo
-- Qué le pedí (resumen): Como puedo abrir un repositorio y vincularlo a mi vsc online?
-- Qué cambié yo y por qué: Me pedia instalar el GitHub pero yo lo queria hacer de forma online para no descargar el GitHub y lo hice
-- Qué he aprendido: Como vincular GitHub y VSC
+- Para qué la usé (explicar, depurar, generar código): Para que sirven algunas funciones, como crear pruebas y como utilizarlas
+- Qué le pedí (resumen): Le pedi que me diera ejemplos de las funciones que no conocia, le pedi que me diera ejemplos tambien de las pruebas, como se realizan como "enlazarlas"  con los demas 
+- Qué cambié yo y por qué: Aplique todo lo que me decia y basandome en sus ejemplos realice mis pruebas e hice mis funciones, en la parte de pruebas me dio los nombres de las consultas me dio funciones que no iban acorde con lo que te pedia las pruebas asi que las cambie
+- Qué he aprendido: Para que sirven estas nuevas funciones, como crear pruebas y  como utilizar esas pruebas 
 
 ## Git (opcional)
 
