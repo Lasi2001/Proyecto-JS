@@ -1,4 +1,8 @@
-/** Convierte un texto con coma a número. */
+/**
+ * Convierte un texto con coma decimal en número.
+ * @param {string} texto - El importe en formato texto (ej. "12,50").
+ * @returns {number} El importe convertido a número.
+ */
 function aNumero(texto) {
     const limpio = String(texto).trim().replace(",", ".");
     const numero = Number(limpio);
@@ -6,29 +10,53 @@ function aNumero(texto) {
     return numero;
 }
 
-/** Busca un libro por su ID. */
+/**
+ * Busca un libro por su ID.
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @param {number} id - El ID del libro a buscar.
+ * @returns {Array|undefined} El libro encontrado o undefined si no existe.
+ */
 function buscarPorId(listaLibros, id) {
     return listaLibros.find(libro => libro[L_ID] === id);
 }
 
-/** Filtra libros por género. */
+/**
+ * Filtra los libros por un género específico.
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @param {string} genero - El género a filtrar.
+ * @returns {Array[]} Un array con los libros de ese género.
+ */
 function filtrarPorGenero(listaLibros, genero) {
     return listaLibros.filter(libro => libro[L_GENERO].toLowerCase() === genero.toLowerCase());
 }
 
-/** Ordena por año y, si empatan, por título. */
+/**
+ * Ordena los libros por año y, si empatan, por título.
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @returns {Array[]} Una copia ordenada de la lista de libros.
+ */
 function librosOrdenados(listaLibros) {
     return [...listaLibros].sort((a, b) => {
         return a[L_ANIO] - b[L_ANIO] || a[L_TITULO].localeCompare(b[L_TITULO]);
     });
 }
 
-/** Comprueba si hay algún libro anterior a un año. */
+/**
+ * Comprueba si hay algún libro publicado antes de un año determinado.
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @param {number} anio - El año límite.
+ * @returns {boolean} true si hay alguno, false si no.
+ */
 function hayLibrosAntesDe(listaLibros, anio) {
     return listaLibros.some(libro => libro[L_ANIO] < anio);
 }
 
-/** Suma las fianzas de los libros prestados (no devueltos). */
+/**
+ * Suma las fianzas de los libros prestados (no devueltos).
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @param {Array[]} listaPrestamos - La lista de préstamos.
+ * @returns {number} El total de las fianzas redondeado a 2 decimales.
+ */
 function totalFianzasPrestadas(listaLibros, listaPrestamos) {
     let total = 0;
     const prestamosActivos = listaPrestamos.filter(p => p[P_DEVUELTO] === false);
@@ -41,7 +69,11 @@ function totalFianzasPrestadas(listaLibros, listaPrestamos) {
     return Math.round(total * 100) / 100;
 }
 
-/** Devuelve autores únicos (sin vacíos) ordenados. */
+/**
+ * Devuelve una lista de autores únicos (sin vacíos) ordenados alfabéticamente.
+ * @param {Array[]} listaLibros - La lista de libros.
+ * @returns {Array<string>} Un array de nombres de autores sin repetir.
+ */
 function obtenerAutoresUnicos(listaLibros) {
     const autores = listaLibros.map(libro => libro[L_AUTOR]).filter(autor => autor !== "");
     return [...new Set(autores)].sort();

@@ -33,7 +33,7 @@ Una entrada al final de cada sesión: fecha, qué has hecho y qué te ha costado
 Si no la has usado, escribe «No he usado IA».
 
 - Herramienta: DeepSeek
-- Para qué la usé (explicar, depurar, generar código): Para que sirven algunas funciones, como crear pruebas y como utilizarlas
+- Para qué la usé (explicar, depurar, generar código): Para que sirven algunas funciones, como crear pruebas y como utilizarlas y el JSDoc le he tenido que preguntar porque no recordaba como hacerlas
 - Qué le pedí (resumen): Le pedi que me diera ejemplos de las funciones que no conocia, le pedi que me diera ejemplos tambien de las pruebas, como se realizan como "enlazarlas"  con los demas 
 - Qué cambié yo y por qué: Aplique todo lo que me decia y basandome en sus ejemplos realice mis pruebas e hice mis funciones, en la parte de pruebas me dio los nombres de las consultas me dio funciones que no iban acorde con lo que te pedia las pruebas asi que las cambie
 - Qué he aprendido: Para que sirven estas nuevas funciones, como crear pruebas y  como utilizar esas pruebas 
