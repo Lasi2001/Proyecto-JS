@@ -27,3 +27,32 @@ prueba("obtenerAutoresUnicos quita vacíos y duplicados", () => {
     igual(autores.includes("Gabriel García Márquez"), true); 
     igual(autores.includes(""), false); 
 });
+
+
+// PRUEBAS DEL HITO 3 
+
+
+prueba("buscarLibro usa el Map y devuelve el libro 2", () => {
+    igual(buscarLibro(2)[L_TITULO], "El Hobbit");
+});
+
+prueba("agruparPorGenero crea un Map correctamente", () => {
+    const mapa = agruparPorGenero(libros);
+    igual(mapa.get("Romance").length, 2); 
+});
+
+prueba("generosUnicos devuelve un Set sin repetidos", () => {
+    const setGeneros = generosUnicos(libros);
+    igual(setGeneros.size, 11); 
+});
+
+prueba("crearGeneradorId genera IDs consecutivos", () => {
+    const siguienteId = crearGeneradorId(15); 
+    igual(siguienteId(), 16);
+    igual(siguienteId(), 17);
+});
+
+prueba("filtrarPor recibe una función como parámetro", () => {
+    const resultado = filtrarPor(libros, libro => libro[L_ANIO] === 1937);
+    igual(resultado[0][L_TITULO], "El Hobbit");
+});

@@ -78,3 +78,43 @@ function obtenerAutoresUnicos(listaLibros) {
     const autores = listaLibros.map(libro => libro[L_AUTOR]).filter(autor => autor !== "");
     return [...new Set(autores)].sort();
 }
+
+// --- HITO 3 ---
+function crearIndice(lista, posId) {
+    return new Map(lista.map(fila => [fila[posId], fila]));
+}
+
+const indiceLibros = crearIndice(libros, L_ID);
+
+function buscarLibro(id) {
+    return indiceLibros.get(id);
+}
+
+function agruparPorGenero(listaLibros) {
+    const agrupacion = new Map();
+    for (const libro of listaLibros) {
+        const genero = libro[L_GENERO];
+        const titulo = libro[L_TITULO];
+        if (!agrupacion.has(genero)) {
+            agrupacion.set(genero, []);
+        }
+        agrupacion.get(genero).push(titulo);
+    }
+    return agrupacion;
+}
+
+function generosUnicos(listaLibros) {
+    return new Set(listaLibros.map(libro => libro[L_GENERO]));
+}
+
+function crearGeneradorId(ultimo) {
+    let actual = ultimo;
+    return () => {
+        actual++;
+        return actual;
+    };
+}
+
+function filtrarPor(lista, condicion) {
+    return lista.filter(condicion);
+}
