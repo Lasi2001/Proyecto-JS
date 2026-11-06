@@ -12,7 +12,13 @@ Se abren con doble clic o con Live Server. No hay que instalar nada.
 
 ## Regla personal
 
-Copia aquí el enunciado de tu ficha:
+Ranking con desempate
+
+sociosMasLectores() devuelve los 3 socios con más préstamos como pares [nombre, prestamos], de mayor a menor. Si dos empatan, va primero el que está antes en orden alfabético.
+
+Ejemplo: Ana 5, Luis 5, Marta 3, Pablo 1 → [["Ana", 5], ["Luis", 5], ["Marta", 3]].
+
+Válido si: Funciona dentro de tu proyecto, en js/regla.js, y tiene al menos 2 pruebas en js/pruebas.js: una del caso normal y otra del límite o del error.
 
 > ...
 
@@ -25,19 +31,20 @@ El Set para obtener una lista de valores unicos, para eliminar los duplicados au
 
 Una entrada al final de cada sesión: fecha, qué has hecho y qué te ha costado o qué has preguntado.
 
-- 04/11/2026 · Hecho: hito3
-  Me ha costado: Me cuesta un poco al tener muchos archivos y trabajando en cada uno una cosa diferente el de consultas, pruebas y datos   
-  He preguntado: 
+- 06/11/2026 · Hecho: Menu, altas, bajas y regla personal
+  Me ha costado: Me ha costado muchisimo el control de los errores con el try catch
+  He encontrado un fallo con el depurador, el menu "explota" si metia letras en el prompt
+  He preguntado: Como "estructurar" el bucle del menu sin darme el codigo solo una explicacion teorica
 
 ## Uso de IA
 
 Si no la has usado, escribe «No he usado IA».
 
 - Herramienta: DeepSeek
-- Para qué la usé (explicar, depurar, generar código):  En este hito lo he utilizado para depurar y entender errores en las pruebas 
-- Qué le pedí (resumen):  Le pedi que me explicara porque fallaban algunas pruebas y como funcionaban los Map y Set 
-- Qué cambié yo y por qué: adapte las soluciones que la IA me daba a mis propios datos de la biblioteca
-- Qué he aprendido: Utilizar el Set, Map, y sus metodos, el has y get, para buscar y agrupar datos 
+- Para qué la usé (explicar, depurar, generar código):Para depurar la logica del menu y la validacion de errores 
+- Qué le pedí (resumen): Le pedi ayuda  para estructurar el menu 
+- Qué cambié yo y por qué: solo cambie el menu para que se solapara con mis funciones de altas y bajas
+- Qué he aprendido: Lanzar y capturar errores a crear menus interactivos y hacer ordenaciones complejas con sort 
 
 ## Git (opcional)
 

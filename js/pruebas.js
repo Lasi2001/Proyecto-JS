@@ -78,3 +78,19 @@ prueba("Prestar falla si el socio no existe", () => {
 prueba("Borrar falla si el préstamo no existe", () => {
     lanzaError(() => borrarPrestamo(prestamos, 999), "El préstamo no existe");
 });
+
+// ==========================================
+// PRUEBAS DEL HITO 4 (Regla y Errores)
+// ==========================================
+
+prueba("Mi regla personal: devuelve el Top 3 correctamente", () => {
+    const top = sociosMasLectores();
+    igual(top.length, 3);
+    // Según tus datos, el socio 2 (Luis) tiene 4 préstamos, el 1 (Ana) tiene 3.
+    igual(top[0][0], "Luis Gómez"); 
+});
+
+prueba("Mi regla personal: comprobar que lanza error si falla un requisito", () => {
+    // Usamos lanzaError para probar que prestar falla si el socio no existe
+    lanzaError(() => prestar(prestamos, 99, 1, 30, () => 15), "Socio no encontrado");
+});

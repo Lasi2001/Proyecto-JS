@@ -1,9 +1,6 @@
-console.table(libros);
-console.table(socios);
-console.table(prestamos);
-
-// Menú del programa.
-
+/**
+ * Muestra un menú interactivo por consola para gestionar la biblioteca.
+ */
 function menu() {
     let prestamosActuales = [...prestamos];
     const siguienteId = crearGeneradorId(prestamos.length);
@@ -36,28 +33,25 @@ function menu() {
                     break;
 
                 case "3":
-                    let idSocio = prompt("ID del socio:");
-                    let idLibro = prompt("ID del libro:");
-                    let dia = prompt("Día del préstamo (1-60):");
+                    const idSocio = pedirNumero("ID del socio:");
+                    if (idSocio === null) break;
                     
-                    if (idSocio === null || idLibro === null || dia === null) break;
+                    const idLibro = pedirNumero("ID del libro:");
+                    if (idLibro === null) break;
                     
-                    prestamosActuales = prestar(
-                        prestamosActuales, 
-                        Number(idSocio), 
-                        Number(idLibro), 
-                        Number(dia), 
-                        siguienteId
-                    );
+                    const dia = pedirNumero("Día del préstamo (1-60):");
+                    if (dia === null) break;
+                    
+                    prestamosActuales = prestar(prestamosActuales, idSocio, idLibro, dia, siguienteId);
                     alert("Préstamo realizado con éxito.");
                     break;
 
                 case "4":
-                    let idPrestamo = prompt("ID del préstamo a borrar:");
+                    const idPrestamo = pedirNumero("ID del préstamo a borrar:");
                     if (idPrestamo === null) break;
                     
                     if (confirm(`¿Seguro que quieres borrar el préstamo ${idPrestamo}?`)) {
-                        prestamosActuales = borrarPrestamo(prestamosActuales, Number(idPrestamo));
+                        prestamosActuales = borrarPrestamo(prestamosActuales, idPrestamo);
                         alert("Préstamo borrado.");
                     }
                     break;
@@ -71,4 +65,15 @@ function menu() {
     }
 }
 
-menu(); // Arrancamos el menú al cargar la página
+// Función auxiliar para pedir números (Paso 6 del PDF)
+function pedirNumero(mensaje) {
+    const input = prompt(mensaje);
+    if (input === null) return null;
+    
+    if (input.trim() === "" || !Number.isInteger(Number(input))) {
+        throw new Error("Debes introducir un número entero válido.");
+    }
+    return Number(input);
+}
+
+menu();
